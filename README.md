@@ -24,7 +24,7 @@ This extension watches your Claude Code sessions in real-time and saves them as 
 
 ### From VSIX (Recommended)
 
-1. Download the latest `.vsix` file from [Releases](https://github.com/gamac/claude-chat-backup/releases)
+1. Download the latest `.vsix` file from [Releases](https://github.com/gokhananac66/claude-chat-backup/releases)
 2. Open VS Code
 3. Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
 4. Type "Install from VSIX" and select it
@@ -34,7 +34,7 @@ This extension watches your Claude Code sessions in real-time and saves them as 
 ### From Source
 
 ```bash
-git clone https://github.com/gamac/claude-chat-backup.git
+git clone https://github.com/gokhananac66/claude-chat-backup.git
 cd claude-chat-backup
 npm install
 npm run compile
