@@ -1,0 +1,82 @@
+{
+  "name": "claude-chat-backup",
+  "displayName": "Claude Chat Backup",
+  "description": "Automatically backup Claude Code conversations to Markdown and JSON formats",
+  "version": "1.0.4",
+  "publisher": "gamac",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gamac/claude-chat-backup"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeBackup.startWatching",
+        "title": "Claude Backup: Start Watching"
+      },
+      {
+        "command": "claudeBackup.stopWatching",
+        "title": "Claude Backup: Stop Watching"
+      },
+      {
+        "command": "claudeBackup.exportSession",
+        "title": "Claude Backup: Export Current Session"
+      },
+      {
+        "command": "claudeBackup.openFolder",
+        "title": "Claude Backup: Open Backups Folder"
+      }
+    ],
+    "configuration": {
+      "title": "Claude Chat Backup",
+      "properties": {
+        "claudeBackup.outputPath": {
+          "type": "string",
+          "default": "",
+          "description": "Output folder for backups (default: ~/claude-conversations)"
+        },
+        "claudeBackup.autoStart": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically start watching on VS Code startup"
+        },
+        "claudeBackup.formats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "markdown",
+              "json"
+            ]
+          },
+          "default": [
+            "markdown",
+            "json"
+          ],
+          "description": "Output formats for backups"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  }
+}
